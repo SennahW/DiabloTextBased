@@ -8,7 +8,7 @@ namespace Diablo
 {
     static class RoomManager
     {
-        static List<Room> myRooms;
+        static public List<Room> myRooms;
         static Random myRNG;
         static public int myCurrentIndex = 0;
 
@@ -19,8 +19,7 @@ namespace Diablo
 
         static public int CreateRoom (int aXCoordinate, int aYCoordinate)
         {
-            //myRooms[myCurrentIndex] = new Room(aXCoordinate, aYCoordinate);
-            Room myroom = new Room(aXCoordinate, aYCoordinate);
+            myRooms.Add(new Room(aXCoordinate, aYCoordinate));
             return myCurrentIndex++;
         }
     }

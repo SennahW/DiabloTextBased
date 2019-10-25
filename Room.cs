@@ -15,7 +15,8 @@ namespace Diablo
         {
             myRNG = new Random();
             myRoomEnemies = new List<int>();
-            int tempRoomLevel = aXCoordinate + aYCoordinate / 2;
+
+            int tempRoomLevel = aXCoordinate + aYCoordinate / 2 - 3;
         }   
 
         public void CreateEnemy(int aDamage, int aHealingPerRound, int aHealth, string aNameOfEnemy)

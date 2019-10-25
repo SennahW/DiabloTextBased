@@ -8,13 +8,19 @@ namespace Diablo
 {
     class Fight
     {
-        Player myPlayer;
-        Enemy myEnemy;
 
-        public Fight (Player aPlayer, Enemy anEnemy)
+        public Fight (Player aPlayer, Enemy aEnemy)
         {
-            myPlayer = aPlayer;
-            myEnemy = anEnemy;
+            Player tempPlayer = aPlayer;
+            Enemy tempEnemy = aEnemy;
+            Console.WriteLine("");
+        }
+
+        public Fight(Player aPlayer, Enemy aEnemyOne, Enemy aEnemyTwo)
+        {
+            Player tempPlayer = aPlayer;
+            Enemy tempEnemyOne = aEnemyOne;
+            Enemy tempEnemyTwo = aEnemyTwo;
             Console.WriteLine("");
         }
 

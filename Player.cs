@@ -8,27 +8,26 @@ namespace Diablo
 {
     public class Player
     {
-        public int myHealth;
-        public int myDamage;
-        public string myName;
-        public int myAbilityCooldown;
-        public int myAbilityDamage;
-        public Inventory myInventory;
+
+        int myHealth;
+        int myDamage;
+        string myName;
+        Inventory myInventory;
 
         private static Player myInstance;
 
-        public Player (int someHealth, int someDamage, string aName, int anAbilityCooldown, int anAbilityDamage)
+        public Player (int someHealth, int someDamage, string aName)
         {
             myHealth = someHealth;
             myDamage = someDamage;
             myName = aName;
-            myAbilityCooldown = anAbilityCooldown;
-            myAbilityDamage = anAbilityDamage;
             myInventory = new Inventory();
 
             myInstance = this;
         }
 
-        public static Player Get() { return myInstance; }
+        public int AccessHealth { get => myHealth; set => myHealth = value; } 
+        public int AccessDamage { get => myDamage; set => myDamage = value; }
+        public static Player GetInstance() { return myInstance; }
     }
 }
