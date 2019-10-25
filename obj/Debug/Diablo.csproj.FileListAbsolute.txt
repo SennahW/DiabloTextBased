@@ -1,0 +1,6 @@
+C:\Programmering\Diablo\Diablo\bin\Debug\Diablo.exe
+C:\Programmering\Diablo\Diablo\bin\Debug\Diablo.pdb
+C:\Programmering\Diablo\Diablo\obj\Debug\Diablo.csprojAssemblyReference.cache
+C:\Programmering\Diablo\Diablo\obj\Debug\Diablo.csproj.CoreCompileInputs.cache
+C:\Programmering\Diablo\Diablo\obj\Debug\Diablo.exe
+C:\Programmering\Diablo\Diablo\obj\Debug\Diablo.pdb
