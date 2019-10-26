@@ -19,15 +19,35 @@ namespace Diablo
             myPlayer = new Player(100, 100, "Zelda");
             myRooms[3,3] = RoomManager.CreateRoom(3, 3);
 
-            
+            //Actual game
             {
-                Room(RoomManager.myRooms[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]]);
+                if(PlayRoom(RoomManager.myRooms[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]]))
+                {
+                    Console.WriteLine("Where do you want to go next?");
+                    Console.WriteLine("1: North");
+                    Console.WriteLine("2: South");
+                    Console.WriteLine("3: East");
+                    Console.WriteLine("4: West");
+                    string tempUserInput = Console.ReadLine();
+                    if (tempUserInput == "1")
+                    {
+
+                    }
+                }
+                
             } while (myPlayer.AccessHealth > 0);
         }
 
-        public void Room (Room aRoom)
+        public bool PlayRoom (Room aRoom)
         {
-            
+            if (myPlayer.AccessHealth > 50)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
