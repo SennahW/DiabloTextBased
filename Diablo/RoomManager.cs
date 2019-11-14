@@ -10,7 +10,7 @@ namespace Diablo
     {
         static public List<Room> myRooms;
         static Random myRNG;
-        static public int myCurrentIndex = 1;
+        static public int myCurrentIndex = 0;
 
         static public void Init()
         {

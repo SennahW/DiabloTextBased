@@ -14,8 +14,12 @@ namespace Diablo
             bool tempGameIsRunning = true;
             EnemyManager.Init();
             RoomManager.Init();
+            Console.WindowHeight = 50;
+            Console.WindowWidth = 213;
+
 
             Console.WriteLine("Welcome to another world!");
+
             do
             {
                 Console.WriteLine("1: Start game");
@@ -32,6 +36,7 @@ namespace Diablo
                 }
                 else
                 {
+                    Console.Clear();
                     Console.WriteLine("Wrong Input");
                 }
             }

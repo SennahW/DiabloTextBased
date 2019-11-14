@@ -10,18 +10,24 @@ namespace Diablo
     {                                                                                       
         public Random myRNG;
         public List<int> myRoomEnemies;
+        public int tempRoomLevel;
 
         public Room(int aXCoordinate, int aYCoordinate)
         {
             myRNG = new Random();
             myRoomEnemies = new List<int>();
-
-            int tempRoomLevel = aXCoordinate + aYCoordinate / 2 - 3;
+            tempRoomLevel = aXCoordinate + aYCoordinate / 2 - 3;
+            PlayRoom();
         }   
 
         public void CreateEnemy(int aDamage, int aHealingPerRound, int aHealth, string aNameOfEnemy)
         {
             myRoomEnemies.Add(EnemyManager.AddEnemy(aDamage, aHealingPerRound, aHealth, aNameOfEnemy));
+        }
+
+        public bool PlayRoom()
+        {
+            return true;
         }
 
         public void RemoveEnemy (int anID)

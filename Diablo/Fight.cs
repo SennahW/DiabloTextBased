@@ -14,6 +14,7 @@ namespace Diablo
             Player tempPlayer = aPlayer;
             Enemy tempEnemy = aEnemy;
             Console.WriteLine("");
+            
         }
 
         public Fight(Player aPlayer, Enemy aEnemyOne, Enemy aEnemyTwo)
@@ -22,6 +23,7 @@ namespace Diablo
             Enemy tempEnemyOne = aEnemyOne;
             Enemy tempEnemyTwo = aEnemyTwo;
             Console.WriteLine("");
+            
         }
 
         public void PrintBattle()
@@ -30,3 +32,91 @@ namespace Diablo
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Gay

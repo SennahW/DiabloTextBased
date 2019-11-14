@@ -11,42 +11,68 @@ namespace Diablo
         static int[,] myRooms = new int[5, 5];
         Player myPlayer;
 
+        int myCurrentXCoordinate = 2;
+        int myCurrentYCoordinate = 2;
+
         public Diablo ()
         {
-            int myCurrentXCoordinate = 3;
-            int myCurrentYCoordinate = 3;
+            
             Console.WriteLine("Welcome Zelda to this terryfing world");
             myPlayer = new Player(100, 100, "Zelda");
-            myRooms[3,3] = RoomManager.CreateRoom(3, 3);
+            myRooms[myCurrentXCoordinate, myCurrentYCoordinate] = RoomManager.CreateRoom(myCurrentXCoordinate, myCurrentYCoordinate);
+            Graphics.UpdateMap(myCurrentXCoordinate, myCurrentYCoordinate);
 
             //Actual game
+            do
             {
-                if(PlayRoom(RoomManager.myRooms[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]]))
+                if (myRooms[myCurrentXCoordinate, myCurrentYCoordinate] == null)
                 {
-                    Console.WriteLine("Where do you want to go next?");
-                    Console.WriteLine("1: North");
-                    Console.WriteLine("2: South");
-                    Console.WriteLine("3: East");
-                    Console.WriteLine("4: West");
-                    string tempUserInput = Console.ReadLine();
-                    if (tempUserInput == "1")
+                    myRooms[myCurrentXCoordinate, myCurrentYCoordinate] = RoomManager.CreateRoom(myCurrentXCoordinate, myCurrentXCoordinate);
+                    if (RoomManager.myRooms[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]].PlayRoom())
                     {
-
+                        Move();
                     }
                 }
-                
+                else
+                {
+                    if (RoomManager.myRooms[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]].PlayRoom())
+                    {
+                        Move();
+                    }
+                }
+
+                Graphics.ClearGraphics(myCurrentXCoordinate, myCurrentYCoordinate);
             } while (myPlayer.AccessHealth > 0);
         }
 
-        public bool PlayRoom (Room aRoom)
+        public void Move ()
         {
-            if (myPlayer.AccessHealth > 50)
+            Console.WriteLine("Where do you want to go next?");
+            Console.WriteLine("1: North");
+            Console.WriteLine("2: South");
+            Console.WriteLine("3: East");
+            Console.WriteLine("4: West");
+            string tempUserInput = Console.ReadLine();
+
+            if (tempUserInput == "2" && myCurrentYCoordinate < 4)
             {
-                return true;
+                myCurrentYCoordinate++;
+            }
+            else if (tempUserInput == "1" && myCurrentYCoordinate > 0)
+            {
+                myCurrentYCoordinate--;
+            }
+            else if (tempUserInput == "3" && myCurrentXCoordinate < 4)
+            {
+                myCurrentXCoordinate++;
+            }
+            else if (tempUserInput == "4" && myCurrentXCoordinate > 0)
+            {
+                myCurrentXCoordinate--;
             }
             else
             {
-                return false;
+                Console.WriteLine("Invalid input!");
             }
         }
     }
