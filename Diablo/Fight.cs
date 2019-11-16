@@ -25,11 +25,6 @@ namespace Diablo
             Console.WriteLine("");
             
         }
-
-        public void PrintBattle()
-        {
-
-        }
     }
 }
 

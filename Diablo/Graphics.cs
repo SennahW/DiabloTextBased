@@ -10,7 +10,7 @@ namespace Diablo
 
     static class Graphics
     {
-        static public void UpdateMap(int myCurrentXCoordinate, int myCurrentYCoordinate)
+        static public void PrintMap(int myCurrentXCoordinate, int myCurrentYCoordinate)
         {
          
 
@@ -46,13 +46,17 @@ namespace Diablo
                             Console.SetCursorPosition(176 + x * 7, y * 3 + k);
                             if (myCurrentXCoordinate == x && myCurrentYCoordinate == y)
                             {
-                            Console.SetCursorPosition(176 + x * 7 + 2, y * 3 + k);
+                                Console.SetCursorPosition(176 + x * 7 + 2, y * 3 + k);
                                 Console.Write("[]");
                             }
-                            if(4 == x && 3 == y)
+                            for (int i = 0; i < RoomManager.myRooms.Count; i++)
                             {
-                            Console.SetCursorPosition(176 + x * 7, y * 3 + k);
-                                Console.Write("o¬");
+                                if (RoomManager.myRooms[i].AccessMyXCoordinate == x && RoomManager.myRooms[i].AccessMyYCoordinate == y)
+                                {
+                                    Console.SetCursorPosition(176 + x * 7, y * 3 + k);
+
+                                    Console.Write("o¬");
+                                }
                             }
 
                         }
@@ -65,10 +69,22 @@ namespace Diablo
         static public void ClearGraphics(int myCurrentXCoordinate, int myCurrentYCoordinate)
         {
             Console.Clear();
-            UpdateMap(myCurrentXCoordinate, myCurrentYCoordinate);
+            PrintMap(myCurrentXCoordinate, myCurrentYCoordinate);
         }
 
+        static public void PrintPlayer ()
+        {
+            int tempStartLineTop = Console.CursorTop;
 
+
+
+            Console.SetCursorPosition(0, tempStartLineTop);
+        }
+
+        static public void PrintEnemy ()
+        {
+
+        }
     }
 }
 

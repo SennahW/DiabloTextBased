@@ -7,17 +7,23 @@ using System.Threading.Tasks;
 namespace Diablo
 {
     class Room
-    {                                                                                       
-        public Random myRNG;
-        public List<int> myRoomEnemies;
-        public int tempRoomLevel;
+    {
+        int myXCoordinate;
+        int myYCoordinate;
+        Random myRNG;
+        List<int> myRoomEnemies;
+        int myRoomLevel;
+
+        bool myRoomIsLooted;
+        bool myRoomContatinsKey;
+
+        
 
         public Room(int aXCoordinate, int aYCoordinate)
         {
             myRNG = new Random();
             myRoomEnemies = new List<int>();
-            tempRoomLevel = aXCoordinate + aYCoordinate / 2 - 3;
-            PlayRoom();
+            myRoomLevel = aXCoordinate + aYCoordinate / 2 - 3;
         }   
 
         public void CreateEnemy(int aDamage, int aHealingPerRound, int aHealth, string aNameOfEnemy)
@@ -39,5 +45,10 @@ namespace Diablo
                 myRoomEnemies[i]--;
             }
         }
+
+        public int AccessMyXCoordinate { get => myXCoordinate; set => myXCoordinate = value; }
+        public int AccessMyYCoordinate { get => myYCoordinate; set => myYCoordinate  = value; }
+        public bool AccessLootStatus { get => myRoomIsLooted; set => myRoomIsLooted = value; }
+        public bool AccessKeyStatus { get => myRoomContatinsKey; set => myRoomContatinsKey = value; }
     }
 }

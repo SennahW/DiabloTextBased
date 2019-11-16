@@ -19,8 +19,19 @@ namespace Diablo
 
         static public int CreateRoom (int aXCoordinate, int aYCoordinate)
         {
-            myRooms.Add(new Room(aXCoordinate, aYCoordinate));
-            return myCurrentIndex++;
+            for (int i = 0; i < myRooms.Count; i++)
+            {
+                if (myRooms[i].AccessMyXCoordinate != aXCoordinate && myRooms[i].AccessMyYCoordinate != aYCoordinate)
+                {
+                    myRooms.Add(new Room(aXCoordinate, aYCoordinate));
+                    return myCurrentIndex++;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+            return 0;
         }
     }
 }
