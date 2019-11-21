@@ -6,22 +6,32 @@ using System.Threading.Tasks;
 
 namespace Diablo
 {
-    static class EnemyManager
+    static class EnemyAndPlayerManager
     {
-        static public List<Enemy> myEnemies;
-        static public int myCurrentIndex = 0;
-            
+        static List<Enemy> myEnemies;
+        static List<Player> myPlayers;
+        static int myCurrentEnemyIndex = 0;
+        static int myCurrentPlayerIndex = 0;
+
         static public void Init()
         {
             myEnemies = new List<Enemy>();
+            myPlayers = new List<Player>();
         }
 
         static public int AddEnemy(int aDamage, int aHealingPerRound, int aHealth, string aNameOfEnemy)
         {
             myEnemies.Add(new Enemy (aDamage, aHealingPerRound, aHealth, aNameOfEnemy));
             Console.WriteLine("Enemy added");
-            return ++myCurrentIndex;
+            return myCurrentEnemyIndex++;
         }
+
+        static public int AddPlayer ()
+        {
+            myPlayers.Add(new Player());
+            return myCurrentPlayerIndex++;
+        }
+
         static public void Update()
         {
             for (int i = 0; i < myEnemies.Count; i++)
@@ -41,5 +51,8 @@ namespace Diablo
         {
             myEnemies.RemoveAt(anID);
         }
+
+        public static List<Enemy> AccessEnemyList { get => myEnemies; set => myEnemies = value; }
+        public static List<Player> AccessPlayerList { get => myPlayers; set => myPlayers = value; }
     }
 }

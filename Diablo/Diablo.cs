@@ -18,15 +18,15 @@ namespace Diablo
         {
             
             Console.WriteLine("Welcome Zelda to this terryfing world");
-            myPlayer = new Player(100, 100, "Zelda");
-            myRooms[myCurrentXCoordinate, myCurrentYCoordinate] = RoomManager.CreateRoom(myCurrentXCoordinate, myCurrentYCoordinate);
+
+            myPlayer = new Player();
             Graphics.PrintMap(myCurrentXCoordinate, myCurrentYCoordinate);
 
             //Actual game
             do
             {
                     myRooms[myCurrentXCoordinate, myCurrentYCoordinate] = RoomManager.CreateRoom(myCurrentXCoordinate, myCurrentXCoordinate);
-                    if (RoomManager.myRooms[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]].PlayRoom())
+                    if (RoomManager.AccessRoomList[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]].PlayRoom())
                     {
                         Move();
                     }
@@ -37,16 +37,15 @@ namespace Diablo
 
         public void Move()
         {
-            Console.WriteLine("Where do you want to go next?");
-            Console.WriteLine("1: North");
-            Console.WriteLine("2: South");
-            Console.WriteLine("3: East");
-            Console.WriteLine("4: West");
-            string tempUserInput = Console.ReadLine();
-
             bool tempCorrectInput = false;
             do
             {
+                Console.WriteLine("Where do you want to go next?");
+                Console.WriteLine("1: North");
+                Console.WriteLine("2: South");
+                Console.WriteLine("3: East");
+                Console.WriteLine("4: West");
+                string tempUserInput = Console.ReadLine();
                 if (tempUserInput == "2" && myCurrentYCoordinate < 4)
                 {
                     tempCorrectInput = true;
@@ -69,6 +68,7 @@ namespace Diablo
                 }
                 else
                 {
+                    Graphics.ClearGraphics(myCurrentXCoordinate, myCurrentYCoordinate);
                     Console.WriteLine("Invalid input!");
                 }
             }

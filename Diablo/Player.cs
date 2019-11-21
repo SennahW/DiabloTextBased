@@ -15,16 +15,12 @@ namespace Diablo
         Inventory myInventory;
 
         private static Player myInstance;
-
-        public Player (int someHealth, int someDamage, string aName)
+         
+        public Player ()
         {
-            myHealth = someHealth;
-            myDamage = someDamage;
-            myName = aName;
-            myInventory = new Inventory();
-
             myInstance = this;
         }
+
 
         public int AccessHealth { get => myHealth; set => myHealth = value; } 
         public int AccessDamage { get => myDamage; set => myDamage = value; }

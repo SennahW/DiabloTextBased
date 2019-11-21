@@ -23,12 +23,12 @@ namespace Diablo
         {
             myRNG = new Random();
             myRoomEnemies = new List<int>();
-            myRoomLevel = aXCoordinate + aYCoordinate / 2 - 3;
+            myRoomLevel = RoomLevel(aXCoordinate, aYCoordinate);
         }   
 
         public void CreateEnemy(int aDamage, int aHealingPerRound, int aHealth, string aNameOfEnemy)
         {
-            myRoomEnemies.Add(EnemyManager.AddEnemy(aDamage, aHealingPerRound, aHealth, aNameOfEnemy));
+            myRoomEnemies.Add(EnemyAndPlayerManager.AddEnemy(aDamage, aHealingPerRound, aHealth, aNameOfEnemy));
         }
 
         public bool PlayRoom()
@@ -36,9 +36,18 @@ namespace Diablo
             return true;
         }
 
+        public int RoomLevel (int aXCoordinate, int aYCoordinate)
+        {
+            int tempXLevel;
+            int tempYLevel;
+            tempXLevel = 5 / 2 - aXCoordinate;
+            tempYLevel = 5 / 2 - aYCoordinate;
+            return (tempXLevel + tempYLevel) / 2;
+        }
+
         public void RemoveEnemy (int anID)
         {
-            EnemyManager.DeleteEnemy(anID);
+            EnemyAndPlayerManager.DeleteEnemy(anID);
             myRoomEnemies.RemoveAt(anID);
             for (int i = myRoomEnemies.Count-1; i != anID-1; i--)
             {

@@ -48,7 +48,7 @@
     <Compile Include="Diablo.cs" />
     <Compile Include="Door.cs" />
     <Compile Include="Enemy.cs" />
-    <Compile Include="EnemyManager.cs" />
+    <Compile Include="EnemyAndPlayerManager.cs" />
     <Compile Include="Fight.cs" />
     <Compile Include="Graphics.cs" />
     <Compile Include="Inventory.cs" />

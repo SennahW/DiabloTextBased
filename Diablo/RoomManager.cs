@@ -8,9 +8,9 @@ namespace Diablo
 {
     static class RoomManager
     {
-        static public List<Room> myRooms;
+        static List<Room> myRooms;
         static Random myRNG;
-        static public int myCurrentIndex = 0;
+        static int myCurrentIndex = 0;
 
         static public void Init()
         {
@@ -31,7 +31,14 @@ namespace Diablo
                     return 0;
                 }
             }
+            if (myRooms.Count == 0)
+            {
+                myRooms.Add(new Room(aXCoordinate, aYCoordinate));
+            }
             return 0;
         }
+
+        public static List<Room> AccessRoomList { get => myRooms; set => myRooms = value; }
+
     }
 }

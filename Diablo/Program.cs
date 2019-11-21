@@ -12,7 +12,7 @@ namespace Diablo
         static void Main(string[] args)
         {
             bool tempGameIsRunning = true;
-            EnemyManager.Init();
+            EnemyAndPlayerManager.Init();
             RoomManager.Init();
             Console.WindowHeight = 50;
             Console.WindowWidth = 213;
