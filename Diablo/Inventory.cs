@@ -8,25 +8,16 @@ namespace Diablo
 {
     public class Inventory
     {
-        public List<Item> myInventoryList;
+        List<Item> myInventoryList;
+        int myInventorySize;
 
-        public Inventory ()
-        {   myInventoryList = new List<Item>();
-            PrintInventory();
-            Console.ReadKey();
-        }
-
-        public void PrintInventory()
+        public Inventory (int aInventorySize)
         {
-            for (int i = 0; i < myInventoryList.Count; i++)
-            {
-                myInventoryList[i].PrintItem();
-            }
+            myInventorySize = aInventorySize;
+            myInventoryList = new List<Item>();
         }
 
-        public void CreateItem (int aTypeOfItem, int aDamage, int aHealing, int aDurability, string aNameOfItem)
-        {
-            myInventoryList.Add(new Item(aTypeOfItem, aDamage, aHealing, aDurability, aNameOfItem));
-        }
+        public List<Item> AccessInvetory { get => myInventoryList; set => myInventoryList = value; }
+
     }
 }

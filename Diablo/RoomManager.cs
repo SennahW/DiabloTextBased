@@ -11,9 +11,11 @@ namespace Diablo
         static List<Room> myRooms;
         static Random myRNG;
         static int myCurrentIndex = 0;
+        
 
         static public void Init()
         {
+            myRNG = new Random();
             myRooms = new List<Room>();
         }
 
@@ -35,7 +37,24 @@ namespace Diablo
             {
                 myRooms.Add(new Room(aXCoordinate, aYCoordinate));
             }
+            KeyMethod(aXCoordinate, aYCoordinate);
+
             return 0;
+        }
+
+        static private void KeyMethod(int aXCoordinate, int aYCoordinate)
+        {
+            int tempKeyCounter;
+            if (aXCoordinate == 0 || aXCoordinate == 4 || aYCoordinate == 0 || aYCoordinate == 4)
+            {
+                if (myRNG.Next(0, 10) == 1)
+                {
+                    if ()
+                    {
+
+                    }
+                }
+            }
         }
 
         public static List<Room> AccessRoomList { get => myRooms; set => myRooms = value; }

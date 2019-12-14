@@ -16,10 +16,9 @@ namespace Diablo
 
         public Diablo ()
         {
-            
-            Console.WriteLine("Welcome Zelda to this terryfing world");
-
             myPlayer = new Player();
+            Console.WriteLine("Welcome " + myPlayer.AccessName + " to this terryfing world");
+
             Graphics.PrintMap(myCurrentXCoordinate, myCurrentYCoordinate);
 
             //Actual game

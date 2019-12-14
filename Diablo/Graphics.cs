@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Diablo
 {
-    
-
     static class Graphics
     {
         static public void PrintMap(int myCurrentXCoordinate, int myCurrentYCoordinate)
@@ -49,10 +47,13 @@ namespace Diablo
                             }
                             for (int i = 0; i < RoomManager.AccessRoomList.Count; i++)
                             {
-                                if (RoomManager.AccessRoomList[i].AccessMyXCoordinate == x && RoomManager.AccessRoomList[i].AccessMyYCoordinate == y)
+                                if (RoomManager.AccessRoomList[i].AccessKeyStatus == true)
                                 {
-                                    Console.SetCursorPosition(176 + x * 7, y * 3 + k);
-                                    Console.Write("o¬");
+                                    if (RoomManager.AccessRoomList[i].AccessMyXCoordinate == x && RoomManager.AccessRoomList[i].AccessMyYCoordinate == y)
+                                    {
+                                        Console.SetCursorPosition(176 + x * 7, y * 3 + k);
+                                        Console.Write("o¬");
+                                    }
                                 }
                             }
 
@@ -85,7 +86,7 @@ namespace Diablo
     }
 }
 
-
+// Map prototype
 //    |      |      |      |      |      |
 //    |      |      |      |      |      |
 //    |______|______|______|______|______|

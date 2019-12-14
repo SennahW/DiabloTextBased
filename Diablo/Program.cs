@@ -1,8 +1,10 @@
-﻿                  using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Diablo
 {
@@ -14,9 +16,7 @@ namespace Diablo
             bool tempGameIsRunning = true;
             EnemyAndPlayerManager.Init();
             RoomManager.Init();
-            Console.WindowHeight = 50;
-            Console.WindowWidth = 213;
-
+            Console.SetBufferSize(250, 50);
 
             Console.WriteLine("Welcome to another world!");
 
@@ -42,5 +42,6 @@ namespace Diablo
             }
             while (tempGameIsRunning);
         }
+
     }
 }

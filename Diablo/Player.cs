@@ -19,11 +19,20 @@ namespace Diablo
         public Player ()
         {
             myInstance = this;
+            myHealth = 100;
+            myDamage = 120;
+            myName = CreatePlayerName();
+            myInventory = new Inventory();
         }
 
+        private string CreatePlayerName()
+        {
+            return "Zelda";
+        }
 
         public int AccessHealth { get => myHealth; set => myHealth = value; } 
         public int AccessDamage { get => myDamage; set => myDamage = value; }
+        public string AccessName { get => myName; set => myName = value; }
         public static Player GetInstance() { return myInstance; }
     }
 }
