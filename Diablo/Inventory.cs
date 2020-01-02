@@ -17,6 +17,7 @@ namespace Diablo
             myInventoryList = new List<Item>();
         }
 
+
         public List<Item> AccessInvetory { get => myInventoryList; set => myInventoryList = value; }
 
     }

@@ -39,13 +39,19 @@ namespace Diablo
             bool tempCorrectInput = false;
             do
             {
+                string tempUserInput = Console.ReadLine();
                 Console.WriteLine("Where do you want to go next?");
                 Console.WriteLine("1: North");
                 Console.WriteLine("2: South");
                 Console.WriteLine("3: East");
                 Console.WriteLine("4: West");
-                string tempUserInput = Console.ReadLine();
-                if (tempUserInput == "2" && myCurrentYCoordinate < 4)
+
+                for (int i = 0; i < EnemyAndPlayerManager.AccessPlayerList[0].AccessInventory.AccessInvetory.Count; i++)
+                {
+
+                }            
+
+                else if (tempUserInput == "2" && myCurrentYCoordinate < 4)
                 {
                     tempCorrectInput = true;
                     myCurrentYCoordinate++;

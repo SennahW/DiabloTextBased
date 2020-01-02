@@ -60,4 +60,7 @@ namespace Diablo
         public static List<Room> AccessRoomList { get => myRooms; set => myRooms = value; }
 
     }
+
+    // ********
+    // 
 }

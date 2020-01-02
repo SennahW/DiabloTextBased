@@ -13,14 +13,16 @@ namespace Diablo
         int myDamage;
         int myHealing;
         int myDurability;
+        bool myIsKey;
 
-        public Item (int aTypeOfItem, int aDamage, int aHealing, int aDurability, string aNameOfItem)
+        public Item (int aTypeOfItem, int aDamage, int aHealing, int aDurability, string aNameOfItem, bool aKeyBool)
         {
             myName = aNameOfItem;
             myDamage = aDamage;
             myHealing = aHealing;
             myDurability = aDurability;
             myTypeOfItem = aTypeOfItem;
+            myIsKey = aKeyBool;
         }
 
         public void PrintItem()
