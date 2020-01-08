@@ -49,10 +49,7 @@ namespace Diablo
             {
                 if (myRNG.Next(0, 10) == 1)
                 {
-                    if ()
-                    {
-
-                    }
+                    
                 }
             }
         }

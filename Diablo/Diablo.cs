@@ -14,7 +14,7 @@ namespace Diablo
         int myCurrentXCoordinate = 2;
         int myCurrentYCoordinate = 2;
 
-        public Diablo ()
+        public Diablo()
         {
             myPlayer = new Player();
             Console.WriteLine("Welcome " + myPlayer.AccessName + " to this terryfing world");
@@ -24,11 +24,11 @@ namespace Diablo
             //Actual game
             do
             {
-                    myRooms[myCurrentXCoordinate, myCurrentYCoordinate] = RoomManager.CreateRoom(myCurrentXCoordinate, myCurrentXCoordinate);
-                    if (RoomManager.AccessRoomList[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]].PlayRoom())
-                    {
-                        Move();
-                    }
+                myRooms[myCurrentXCoordinate, myCurrentYCoordinate] = RoomManager.CreateRoom(myCurrentXCoordinate, myCurrentXCoordinate);
+                if (RoomManager.AccessRoomList[myRooms[myCurrentXCoordinate, myCurrentYCoordinate]].PlayRoom())
+                {
+                    Move();
+                }
 
                 Graphics.ClearGraphics(myCurrentXCoordinate, myCurrentYCoordinate);
             } while (myPlayer.AccessHealth > 0);
@@ -45,13 +45,8 @@ namespace Diablo
                 Console.WriteLine("2: South");
                 Console.WriteLine("3: East");
                 Console.WriteLine("4: West");
-
-                for (int i = 0; i < EnemyAndPlayerManager.AccessPlayerList[0].AccessInventory.AccessInvetory.Count; i++)
-                {
-
-                }            
-
-                else if (tempUserInput == "2" && myCurrentYCoordinate < 4)
+                
+                if (tempUserInput == "2" && myCurrentYCoordinate < 4)
                 {
                     tempCorrectInput = true;
                     myCurrentYCoordinate++;
