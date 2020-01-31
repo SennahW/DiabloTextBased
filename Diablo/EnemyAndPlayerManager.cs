@@ -42,14 +42,16 @@ namespace Diablo
 
         static public void PrintEnemy(int aID)
         {
-            Console.WriteLine(aID + myEnemies[aID].myName);
-            //Console.WriteLine(myEnemies[aID].myDamage);
-            //Console.WriteLine(myEnemies[aID].myHealingPerRound);
+            Console.WriteLine(aID + myEnemies[aID].AccessName);
+            Console.WriteLine(myEnemies[aID].AccessDamage);
+            Console.WriteLine(myEnemies[aID].AccessHealth);
         }
 
-        static public void DeleteEnemy(int anID)
+        static public void EnemyIsDead(int anID)
         {
+            myPlayers[0].AccessXP = myPlayers[0].AccessXP + myEnemies[anID].AccessXPAmount;
             myEnemies.RemoveAt(anID);
+
         }
 
         public static List<Enemy> AccessEnemyList { get => myEnemies; set => myEnemies = value; }

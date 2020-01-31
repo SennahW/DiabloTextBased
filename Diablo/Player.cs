@@ -12,6 +12,7 @@ namespace Diablo
         int myHealth;
         int myDamage;
         string myName;
+        int myXP = 0;
         Inventory myInventory;
 
         private static Player myInstance;
@@ -33,6 +34,7 @@ namespace Diablo
         public int AccessHealth { get => myHealth; set => myHealth = value; } 
         public int AccessDamage { get => myDamage; set => myDamage = value; }
         public string AccessName { get => myName; set => myName = value; }
+        public int AccessXP { get => myXP; set => myXP = value; }
         public Inventory AccessInventory { get => myInventory; set => myInventory = value; }
         public static Player GetInstance() { return myInstance; }
     }

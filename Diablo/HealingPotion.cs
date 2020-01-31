@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Diablo
 {
-    public class Item
+    class HealingPotion
     {
-        string myName;
-
-        public Item (string aNameOfItem)
+        int myHealingAmount;
+        
+        public HealingPotion()
         {
-            myName = aNameOfItem;
+
         }
     }
 }

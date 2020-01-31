@@ -7,110 +7,62 @@ namespace Diablo
 {
     class Fight
     {
-
-        public Fight (Player aPlayer, Enemy aEnemy)
+        public bool Initialize (int aEnemyID)
         {
-            Player tempPlayer = aPlayer;
-            Enemy tempEnemy = aEnemy;
-            Console.WriteLine("");
-            
+            do
+            {
+                PlayerMove();
+                EnemyMove(aEnemyID);
+            } while (EnemyAndPlayerManager.AccessPlayerList[0].AccessHealth > 0 && EnemyAndPlayerManager.AccessEnemyList[aEnemyID].AccessHealth > 0);
+
+            if (EnemyAndPlayerManager.AccessPlayerList[0].AccessHealth <= 0)
+            {
+                Console.WriteLine("You lost the battle");
+                return false;
+            }
+
+            else if (EnemyAndPlayerManager.AccessEnemyList[aEnemyID].AccessHealth <= 0)
+            {
+                Console.WriteLine("You won the battle!");
+                return true;
+            }
+
+            return false;
         }
 
-        public Fight(Player aPlayer, Enemy aEnemyOne, Enemy aEnemyTwo)
+        public bool Initialize(int aEnemyID, int aEnemyID2)
         {
-            Player tempPlayer = aPlayer;
-            Enemy tempEnemyOne = aEnemyOne;
-            Enemy tempEnemyTwo = aEnemyTwo;
-            Console.WriteLine("");
-            
+            do
+            {
+                PlayerMove();
+                EnemyMove(aEnemyID);
+            } while (EnemyAndPlayerManager.AccessPlayerList[0].AccessHealth > 0 && EnemyAndPlayerManager.AccessEnemyList[aEnemyID].AccessHealth > 0);
+
+            if (EnemyAndPlayerManager.AccessPlayerList[0].AccessHealth <= 0)
+            {
+                Console.WriteLine("You lost the battle");
+                return false;
+            }
+
+            else if (EnemyAndPlayerManager.AccessEnemyList[aEnemyID].AccessHealth <= 0)
+            {
+                Console.WriteLine("You won the battle!");
+                return true;
+            }
+
+            return false;
+        }
+
+
+        public void EnemyMove(int aEnenmyID)
+        {
+            EnemyAndPlayerManager.AccessEnemyList[aEnenmyID].AccessHealth -= 10;
+            Console.WriteLine("oaskoskds");
+        }
+
+        public void PlayerMove()
+        {
+
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Gay

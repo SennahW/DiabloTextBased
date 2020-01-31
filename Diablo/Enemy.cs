@@ -8,10 +8,11 @@ namespace Diablo
 {
     class Enemy
     {
-        public string myName;
-        public int myDamage;
-        public int myHealingPerRound;
-        public int myHealth;
+        string myName;
+        int myDamage;
+        int myHealingPerRound;
+        int myHealth;
+        int myXPValue = 200;
 
         public Enemy(int aDamage, int aHealingPerRound, int aHealth, string aNameOfEnemy)
         {
@@ -33,6 +34,11 @@ namespace Diablo
         {
 
         }
+
+        public int AccessDamage { get => myDamage; set => myDamage = value; }
+        public string AccessName { get => myName; set => myName = value; }
+        public int AccessHealth { get => myHealth; set => myHealth = value; }
+        public int AccessXPAmount { get => myXPValue; set => myXPValue = value; }
 
     }
 }

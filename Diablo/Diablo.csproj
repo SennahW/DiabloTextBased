@@ -49,6 +49,7 @@
     <Compile Include="EnemyAndPlayerManager.cs" />
     <Compile Include="Fight.cs" />
     <Compile Include="Graphics.cs" />
+    <Compile Include="HealingPotion.cs" />
     <Compile Include="Inventory.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Player.cs" />

@@ -33,7 +33,17 @@ namespace Diablo
 
         public bool PlayRoom()
         {
-            return true;
+            if (myRoomEnemies.Count == 1)
+            {
+                Fight tempFight = new Fight();
+                return tempFight.Initialize(myRoomEnemies[0]);
+            }
+            else if (myRoomEnemies.Count == 2)
+            {
+                Fight tempFight = new Fight();
+                return tempFight.Initialize(myRoomEnemies[0], myRoomEnemies[1]);
+            }
+            return false;
         }
 
         public int RoomLevel (int aXCoordinate, int aYCoordinate)
@@ -47,7 +57,7 @@ namespace Diablo
 
         public void RemoveEnemy (int anID)
         {
-            EnemyAndPlayerManager.DeleteEnemy(anID);
+            EnemyAndPlayerManager.EnemyIsDead(anID);
             myRoomEnemies.RemoveAt(anID);
             for (int i = myRoomEnemies.Count-1; i != anID-1; i--)
             {

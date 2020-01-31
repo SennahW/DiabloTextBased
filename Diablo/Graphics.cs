@@ -79,7 +79,7 @@ namespace Diablo
             Console.SetCursorPosition(0, tempStartLineTop);
         }
 
-        static public void PrintEnemy ()
+        static public void PrintFight()
         {
 
         }
